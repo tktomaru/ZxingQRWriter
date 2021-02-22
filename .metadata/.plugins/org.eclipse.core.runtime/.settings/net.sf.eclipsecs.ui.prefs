@@ -1,0 +1,4 @@
+ask.before.rebuild=prompt
+eclipse.preferences.version=1
+translate.sort.tokens=false
+warn.before.losing.filesets=true

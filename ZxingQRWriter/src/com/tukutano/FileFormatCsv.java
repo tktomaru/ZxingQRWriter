@@ -1,0 +1,60 @@
+package com.tukutano;
+
+/**
+ * CSV読み込みクラス.
+ *
+ * @author tktomaru
+ *
+ *
+ */
+public class FileFormatCsv {
+  private String mFileName;
+  private String mHexString;
+
+  public void setFileName(String fileName) {
+    mFileName = fileName;
+  }
+
+  public void setHexString(String hexString) {
+    mHexString = hexString;
+  }
+
+  public String getFileName() {
+    return mFileName;
+  }
+
+  /**
+   * 16進数文字列を byte 配列に変換.
+   *
+   * @return バイト
+   */
+  public byte[] getHexString() {
+    // 16進数文字列を byte 配列に変換
+    byte[] ret = null;
+    ret = hexStringToByteArray16(mHexString);
+    return ret;
+  }
+
+
+  /**
+   * 16進数文字列を byte 配列に変換.
+   *
+   * @return バイト
+   */
+  public static byte[] hexStringToByteArray16(String s) {
+    int len = s.length();
+    byte[] data = new byte[len / 2];
+    int i = 0;
+    try {
+      for (i = 0; i < len; i += 2) {
+        data[i / 2] =
+            (byte) ((Character.digit(s.charAt(i), 16) << 4) + Character.digit(s.charAt(i + 1), 16));
+      }
+    } catch (StringIndexOutOfBoundsException e) {
+      System.err.println("次の文字列をバイト配列に変換する際に例外が発生：s[" + String.valueOf(i) + "] ： s = " + s);
+      e.printStackTrace();
+      System.exit(1);
+    }
+    return data;
+  }
+}

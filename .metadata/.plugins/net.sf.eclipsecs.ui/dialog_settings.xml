@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="net.sf.eclipsecs.core.config.GlobalCheckConfigurationWorkingSet">
+		<item key="sortColumn" value="1"/>
+		<item key="sortDirection" value="1"/>
+		<item key="colWidth0" value="143"/>
+		<item key="selectedRow" value="-1"/>
+		<item key="colWidth1" value="154"/>
+		<item key="colWidth2" value="107"/>
+		<item key="colWidth3" value="42"/>
+	</section>
+	<section name="net.sf.eclipsecs.core.projectconfig.LocalCheckConfigurationWorkingSet">
+		<item key="sortColumn" value="0"/>
+		<item key="sortDirection" value="1"/>
+		<item key="colWidth0" value="319"/>
+		<item key="selectedRow" value="-1"/>
+		<item key="colWidth1" value="239"/>
+		<item key="colWidth2" value="238"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.CheckConfigurationConfigureDialog">
+		<item key="sortColumn" value="0"/>
+		<item key="sortDirection" value="1"/>
+		<item key="colWidth0" value="71"/>
+		<item key="selectedRow" value="-1"/>
+		<item key="colWidth1" value="141"/>
+		<item key="colWidth2" value="93"/>
+		<item key="colWidth3" value="163"/>
+		<item key="width" value="726"/>
+		<item key="height" value="688"/>
+		<item key="x" value="599"/>
+		<item key="y" value="0"/>
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#ParameterName">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+		<item key="width" value="565"/>
+		<item key="height" value="317"/>
+		<item key="x" value="680"/>
+		<item key="y" value="133"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.properties.FileSetEditDialog">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+		<item key="width" value="526"/>
+		<item key="height" value="622"/>
+		<item key="x" value="537"/>
+		<item key="y" value="0"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.ResolvablePropertiesDialog">
+		<item key="sortColumn" value="0"/>
+		<item key="sortDirection" value="1"/>
+		<item key="colWidth0" value="285"/>
+		<item key="selectedRow" value="-1"/>
+		<item key="colWidth1" value="285"/>
+		<item key="width" value="650"/>
+		<item key="height" value="500"/>
+		<item key="x" value="475"/>
+		<item key="y" value="54"/>
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#MemberName">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+		<item key="width" value="566"/>
+		<item key="height" value="352"/>
+		<item key="x" value="761"/>
+		<item key="y" value="282"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.ResolvablePropertyEditDialog">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+		<item key="width" value="525"/>
+		<item key="height" value="281"/>
+		<item key="x" value="538"/>
+		<item key="y" value="117"/>
+	</section>
+</section>

@@ -1,0 +1,39 @@
+package com.tukutano;
+
+public class FileFormatCSV {
+  private String mFileName;
+  private String mHexString;
+
+  public void setFileName(String fileName) {
+    mFileName = fileName;
+  }
+
+  public void setHexString(String hexString) {
+    mHexString = hexString;
+  }
+
+  public String getFileName() {
+    return mFileName;
+  }
+
+  public byte[] getHexString() {
+    // 16進数文字列を byte 配列に変換
+    byte[] ret = null;
+    try {
+      ret = hexStringToByteArray(mHexString);
+    } catch (IllegalArgumentException e) {
+      System.out.println(e);
+    }
+    return ret;
+  }
+
+  public static byte[] hexStringToByteArray(String s) {
+    int len = s.length();
+    byte[] data = new byte[len / 2];
+    for (int i = 0; i < len; i += 2) {
+      data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4));
+      data[i / 2] = (Character.digit(s.charAt(i + 1), 16));
+    }
+    return data;
+  }
+}

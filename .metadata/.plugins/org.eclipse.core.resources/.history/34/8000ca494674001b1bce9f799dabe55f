@@ -1,0 +1,78 @@
+package com.tukutano;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ZxingQRWriter {
+
+  public static final void main(String[] args) {
+    Charset charset = Charset.forName("UTF-8");
+    String content = "https://develman.net";
+    String output = "qrcode.png";
+    List<FileFormatCSV> inputData = new ArrayList<>();
+
+    if (args.length == 0) {
+      System.out.println("コマンドライン引数がありません。");
+      System.exit(1);
+    }
+
+    System.out.println("File name:" + args[0]);
+    String inputFileName = args[0];
+
+    Path path = Paths.get(inputFileName);
+    String dirName = new File(inputFileName).getParent();
+
+
+    System.out.println("input file = " + inputFileName);
+
+    // ファイルからlistLineに文字列を読み込み
+    try {
+      File f = new File(inputFileName);
+      BufferedReader br = new BufferedReader(new FileReader(f));
+
+      String line = br.readLine();
+      String[] csvData; // 分割後のデータを保持する配列
+      while (line != null) {
+        System.out.println(line);
+        // lineをカンマで分割し、配列dataに設定
+        csvData = line.split(",");
+        if (csvData == null) {
+          System.out.println("期待：filename,010203040506etc");
+          System.out.println("CSVが不正です：" + line);
+          System.exit(1);
+        }
+        if (2 > csvData.length) {
+          System.out.println("期待：filename,010203040506etc");
+          System.out.println("CSVが不正です（2つ未満の行を発見）:" + line);
+          System.exit(1);
+        }
+        FileFormatCSV one = new FileFormatCSV();
+        one.setFileName(csvData[0]);
+        one.setHexString(csvData[1]);
+        inputData.add(one);
+
+        line = br.readLine();
+      }
+      br.close();
+    } catch (IOException e) {
+      System.out.println(e);
+      System.exit(1);
+    }
+
+    for (FileFormatCSV one : inputData) {
+      GenerateQR qrGenerater = new GenerateQR();
+      byte[] bytes = one.getHexString();
+      final Charset SHIFT_JIS_CHARSET = Charset.forName("iso8859-1");
+      qrGenerater.generateQR(new String(bytes, SHIFT_JIS_CHARSET), one.getFileName());
+    }
+  }
+
+}
+

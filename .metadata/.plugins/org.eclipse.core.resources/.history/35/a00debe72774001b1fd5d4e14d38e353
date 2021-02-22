@@ -1,0 +1,31 @@
+package com.tukutano;
+
+import javax.xml.bind.DatatypeConverter;
+
+public class FileFormatCSV {
+  private String mFileName;
+  private String mHexString;
+
+  public void setFileName(String fileName) {
+    mFileName = fileName;
+  }
+
+  public void setHexString(String hexString) {
+    mHexString = hexString;
+  }
+
+  public String getFileName() {
+    return mFileName;
+  }
+
+  public byte[] getHexString() {
+    // 16進数文字列を byte 配列に変換
+    byte[] ret = null;
+    try {
+      ret = DatatypeConverter.parseHexBinary(mHexString);
+    } catch (IllegalArgumentException e) {
+      System.out.println(e);
+    }
+    return ret;
+  }
+}
